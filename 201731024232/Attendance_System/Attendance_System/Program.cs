@@ -16,6 +16,8 @@ namespace Attendance_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Form1 f = new Form1();
+            f.ShowDialog();
             Application.Run(new Form2());
         }
     }

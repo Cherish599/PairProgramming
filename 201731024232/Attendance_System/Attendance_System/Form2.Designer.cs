@@ -37,8 +37,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.btnAbs = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -59,7 +59,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(293, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 44);
+            this.label1.Size = new System.Drawing.Size(191, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "学生列表";
             // 
@@ -125,16 +125,6 @@
             this.btnStart.Text = "开始点名";
             this.btnStart.UseVisualStyleBackColor = false;
             // 
-            // btnStop
-            // 
-            this.btnStop.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnStop.Location = new System.Drawing.Point(348, 7);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(104, 46);
-            this.btnStop.TabIndex = 1;
-            this.btnStop.Text = "停止点名";
-            this.btnStop.UseVisualStyleBackColor = false;
-            // 
             // btnAbs
             // 
             this.btnAbs.BackColor = System.Drawing.Color.Red;
@@ -144,6 +134,16 @@
             this.btnAbs.TabIndex = 2;
             this.btnAbs.Text = "缺勤";
             this.btnAbs.UseVisualStyleBackColor = false;
+            // 
+            // btnStop
+            // 
+            this.btnStop.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnStop.Location = new System.Drawing.Point(348, 7);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(104, 46);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Text = "停止点名";
+            this.btnStop.UseVisualStyleBackColor = false;
             // 
             // Form2
             // 
@@ -156,6 +156,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "学生考勤系统";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

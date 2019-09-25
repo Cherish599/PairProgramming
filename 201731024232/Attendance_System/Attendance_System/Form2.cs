@@ -16,5 +16,10 @@ namespace Attendance_System
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
