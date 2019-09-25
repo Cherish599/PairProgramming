@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,8 +40,11 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnAbs = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.timerCallName = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +102,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(-6, 275);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(802, 115);
@@ -124,6 +129,7 @@
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "开始点名";
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // btnAbs
             // 
@@ -134,6 +140,7 @@
             this.btnAbs.TabIndex = 2;
             this.btnAbs.Text = "缺勤";
             this.btnAbs.UseVisualStyleBackColor = false;
+            this.btnAbs.Click += new System.EventHandler(this.BtnAbs_Click);
             // 
             // btnStop
             // 
@@ -144,6 +151,20 @@
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "停止点名";
             this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
+            // 
+            // timerCallName
+            // 
+            this.timerCallName.Tick += new System.EventHandler(this.TimerCallName_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(324, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 44);
+            this.label2.TabIndex = 0;
             // 
             // Form2
             // 
@@ -160,6 +181,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -178,5 +201,7 @@
         private System.Windows.Forms.Button btnAbs;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Timer timerCallName;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="stuList.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +88,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stu_Database\Stu_Database.csproj">
+      <Project>{7e4a6172-95ff-4994-9b20-92eaa61e6960}</Project>
+      <Name>Stu_Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stu_Entity\Stu_Entity.csproj">
+      <Project>{079eb31a-a4ca-40b7-9e98-0d9791a375ea}</Project>
+      <Name>Stu_Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stu_Layer\Stu_Layer.csproj">
+      <Project>{376ce8dc-18b1-4519-90a4-6b8b13379067}</Project>
+      <Name>Stu_Layer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
