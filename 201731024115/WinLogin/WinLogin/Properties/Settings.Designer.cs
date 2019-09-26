@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace 结对编程.Properties
+namespace WinLogin.Properties
 {
 
 
