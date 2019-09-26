@@ -28,10 +28,22 @@ namespace Entity
         {
 
         }
-        public Student(String id, String name)
+
+        private int timeabsence;
+
+        public int TimeAbence
+        {
+            get { return timeabsence; }
+            set { timeabsence = value; }
+        }
+
+
+        public Student(String id, String name, int timeabsence)
         {
             this.id = id;
             this.name = name;
+            this.timeabsence = timeabsence;
         }
+
     }
 }

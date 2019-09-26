@@ -68,6 +68,7 @@
             this.absence.TabIndex = 2;
             this.absence.Text = "缺勤处理";
             this.absence.UseVisualStyleBackColor = true;
+            this.absence.Click += new System.EventHandler(this.absence_Click);
             // 
             // panel1
             // 

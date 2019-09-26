@@ -16,6 +16,7 @@ namespace PairPrograming
     public partial class Form1 : Form
     {
         List<Student> stuList;
+        int tmp;
         public Form1()
         {
             InitializeComponent();
@@ -34,18 +35,26 @@ namespace PairPrograming
             progressName.Maximum = stuList.Count;
             foreach (Student stu in stuList)
             {
-                dt.Rows.Add(stu.Id, stu.Name);
+                dt.Rows.Add(stu.Id, stu.Name, stu.TimeAbence);
                 progressName.PerformStep();
             }
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[2].Width = 120;
         }
 
         private void Rdchose_Click(object sender, EventArgs e)
         {
             Random rd = new Random();
-            int tmp = rd.Next(1, 84);
+            tmp = rd.Next(1, 84);
             Thread.Sleep(1);
-            chosedstuin.Text = string.Format("学号:{0}  名字:{1}", stuList[tmp].Id,stuList[tmp].Name);
+            chosedstuin.Text = "学号:" + stuList[tmp].Id +" "+"姓名:"+stuList[tmp].Name;
+        }
+
+        private void absence_Click(object sender, EventArgs e)
+        {
+            stuList[tmp].TimeAbence++;
+            int TimeAbsenceTmp = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
+            this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp + 1;
         }
     }
 }
