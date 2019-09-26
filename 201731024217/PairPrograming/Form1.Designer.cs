@@ -32,9 +32,9 @@
             this.Rdchose = new System.Windows.Forms.Button();
             this.absence = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chosedstuin = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.progressName = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -58,6 +58,7 @@
             this.Rdchose.TabIndex = 1;
             this.Rdchose.Text = "随机抽取";
             this.Rdchose.UseVisualStyleBackColor = true;
+            this.Rdchose.Click += new System.EventHandler(this.Rdchose_Click);
             // 
             // absence
             // 
@@ -77,6 +78,15 @@
             this.panel1.Size = new System.Drawing.Size(731, 29);
             this.panel1.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "学生名单";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -93,15 +103,6 @@
             this.chosedstuin.Name = "chosedstuin";
             this.chosedstuin.Size = new System.Drawing.Size(0, 15);
             this.chosedstuin.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "学生名单";
             // 
             // progressName
             // 
