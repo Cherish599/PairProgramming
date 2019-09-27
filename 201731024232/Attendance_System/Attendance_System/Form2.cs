@@ -51,7 +51,7 @@ namespace Attendance_System
             timerCallName.Start();
         }
 
-        private void TimerCallName_Tick(object sender, EventArgs e)
+        public void TimerCallName_Tick(object sender, EventArgs e)
         {
             Random ra = new Random();
              i = ra.Next(stuList.Count);
@@ -67,7 +67,7 @@ namespace Attendance_System
         private void BtnAbs_Click(object sender, EventArgs e)
         {
 
-                stuList[i].Abse++;
+            stuList[i].Abse= stuList[i].Abse+1;
             MessageBox.Show("添加成功！");
         }
     }

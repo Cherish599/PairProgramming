@@ -37,7 +37,7 @@ namespace Stu_Entity
         {
 
         }
-        public Entity(String id, String name,int Abs)
+        public Entity(String id, String name,int abse)
         {
             this.id = id;
             this.name = name;

@@ -10,12 +10,6 @@ namespace Stu_Layer
 {
     public class Layer
     {
-        public int getStudentRecordsNums()
-        {
-            List<Entity> studengList = Databse.getAll();
-            return studengList.Count;
-        }
-
         public List<Entity> getAllStudents()
         {
             List<Entity> studengList = Databse.getAll();
