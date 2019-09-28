@@ -44,11 +44,11 @@ namespace PairPrograming
 
         private void Rdchose_Click(object sender, EventArgs e)
         {
-            cancelabsence.Enabled = false;
+            cancelAbsence.Enabled = false;
             Random rd = new Random();
             tmp = rd.Next(1, 84);
             Thread.Sleep(1);
-            chosedstuin.Text = "学号:" + stuList[tmp].Id +" "+"姓名:"+stuList[tmp].Name;
+            chosedStuInfo.Text = "学号:" + stuList[tmp].Id +" "+"姓名:"+stuList[tmp].Name;
             absence.Enabled = true;
         }
 
@@ -57,7 +57,7 @@ namespace PairPrograming
             stuList[tmp].TimeAbence++;
             int TimeAbsenceTmp1 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp1 + 1;
-            cancelabsence.Enabled = true;
+            cancelAbsence.Enabled = true;
             absence.Enabled = false;
         }
 
@@ -67,7 +67,7 @@ namespace PairPrograming
             int TimeAbsenceTmp2 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp2 - 1;
             absence.Enabled = true;
-            cancelabsence.Enabled = false;
+            cancelAbsence.Enabled = false;
         }
 
         public void unitest_formLoad()
@@ -92,11 +92,11 @@ namespace PairPrograming
 
         public void unitest_rdChoseStu()
         {
-            cancelabsence.Enabled = false;
+            cancelAbsence.Enabled = false;
             Random rd = new Random();
             tmp = rd.Next(1, 84);
             Thread.Sleep(1);
-            chosedstuin.Text = "学号:" + stuList[tmp].Id + " " + "姓名:" + stuList[tmp].Name;
+            chosedStuInfo.Text = "学号:" + stuList[tmp].Id + " " + "姓名:" + stuList[tmp].Name;
             absence.Enabled = true;
         }
 
@@ -106,7 +106,7 @@ namespace PairPrograming
             int TimeAbsenceTmp2 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp2 - 1;
             absence.Enabled = true;
-            cancelabsence.Enabled = false;
+            cancelAbsence.Enabled = false;
         }
 
         public void unitest_Absence()
@@ -114,7 +114,7 @@ namespace PairPrograming
             stuList[tmp].TimeAbence++;
             int TimeAbsenceTmp1 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp1 + 1;
-            cancelabsence.Enabled = true;
+            cancelAbsence.Enabled = true;
             absence.Enabled = false;
         }
 

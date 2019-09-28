@@ -29,12 +29,12 @@ namespace Entity
 
         }
 
-        private int timeabsence;
+        private int timeAbsence;
 
         public int TimeAbence
         {
-            get { return timeabsence; }
-            set { timeabsence = value; }
+            get { return timeAbsence; }
+            set { timeAbsence = value; }
         }
 
 
@@ -42,7 +42,7 @@ namespace Entity
         {
             this.id = id;
             this.name = name;
-            this.timeabsence = timeabsence;
+            this.timeAbsence = timeabsence;
         }
 
     }

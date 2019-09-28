@@ -25,6 +25,5 @@ namespace UnitTestProject1
             tmp = form1.preAssert();
             Assert.AreEqual(0, tmp);
         }
-        [TestMethod]
     }
 }
