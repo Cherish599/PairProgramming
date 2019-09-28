@@ -36,6 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.chosedstuin = new System.Windows.Forms.Label();
             this.progressName = new System.Windows.Forms.ProgressBar();
+            this.cancelabsence = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             // Rdchose
             // 
-            this.Rdchose.Location = new System.Drawing.Point(600, 328);
+            this.Rdchose.Location = new System.Drawing.Point(570, 328);
             this.Rdchose.Name = "Rdchose";
             this.Rdchose.Size = new System.Drawing.Size(75, 23);
             this.Rdchose.TabIndex = 1;
@@ -62,7 +63,8 @@
             // 
             // absence
             // 
-            this.absence.Location = new System.Drawing.Point(600, 369);
+            this.absence.Enabled = false;
+            this.absence.Location = new System.Drawing.Point(570, 369);
             this.absence.Name = "absence";
             this.absence.Size = new System.Drawing.Size(75, 23);
             this.absence.TabIndex = 2;
@@ -112,17 +114,30 @@
             this.progressName.Size = new System.Drawing.Size(731, 40);
             this.progressName.TabIndex = 5;
             // 
+            // cancelabsence
+            // 
+            this.cancelabsence.Enabled = false;
+            this.cancelabsence.Location = new System.Drawing.Point(660, 369);
+            this.cancelabsence.Name = "cancelabsence";
+            this.cancelabsence.Size = new System.Drawing.Size(75, 23);
+            this.cancelabsence.TabIndex = 6;
+            this.cancelabsence.Text = "取消";
+            this.cancelabsence.UseVisualStyleBackColor = true;
+            this.cancelabsence.Click += new System.EventHandler(this.cancelabsence_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 428);
+            this.Controls.Add(this.cancelabsence);
             this.Controls.Add(this.progressName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.absence);
             this.Controls.Add(this.Rdchose);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "点到机";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -138,13 +153,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Rdchose;
         private System.Windows.Forms.Button absence;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label chosedstuin;
         private System.Windows.Forms.ProgressBar progressName;
+        private System.Windows.Forms.Button cancelabsence;
+        private System.Windows.Forms.Button Rdchose;
     }
 }
 

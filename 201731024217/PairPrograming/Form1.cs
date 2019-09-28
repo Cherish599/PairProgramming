@@ -44,17 +44,84 @@ namespace PairPrograming
 
         private void Rdchose_Click(object sender, EventArgs e)
         {
+            cancelabsence.Enabled = false;
             Random rd = new Random();
             tmp = rd.Next(1, 84);
             Thread.Sleep(1);
             chosedstuin.Text = "学号:" + stuList[tmp].Id +" "+"姓名:"+stuList[tmp].Name;
+            absence.Enabled = true;
         }
 
         private void absence_Click(object sender, EventArgs e)
         {
             stuList[tmp].TimeAbence++;
-            int TimeAbsenceTmp = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
-            this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp + 1;
+            int TimeAbsenceTmp1 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
+            this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp1 + 1;
+            cancelabsence.Enabled = true;
+            absence.Enabled = false;
+        }
+
+        private void cancelabsence_Click(object sender, EventArgs e)
+        {
+            stuList[tmp].TimeAbence--;
+            int TimeAbsenceTmp2 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
+            this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp2 - 1;
+            absence.Enabled = true;
+            cancelabsence.Enabled = false;
+        }
+
+        public void unitest_formLoad()
+        {
+            progressName.Step = 1;
+            progressName.Minimum = 0;
+            StudentDAO stuDao = new StudentDAO();
+            stuList = stuDao.getAllStudents();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("stuID", Type.GetType("System.String"));
+            dt.Columns.Add("stuName", Type.GetType("System.String"));
+            dt.Columns.Add("缺勤此次数");
+            progressName.Maximum = stuList.Count;
+            foreach (Student stu in stuList)
+            {
+                dt.Rows.Add(stu.Id, stu.Name, stu.TimeAbence);
+                progressName.PerformStep();
+            }
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[2].Width = 120;
+        }
+
+        public void unitest_rdChoseStu()
+        {
+            cancelabsence.Enabled = false;
+            Random rd = new Random();
+            tmp = rd.Next(1, 84);
+            Thread.Sleep(1);
+            chosedstuin.Text = "学号:" + stuList[tmp].Id + " " + "姓名:" + stuList[tmp].Name;
+            absence.Enabled = true;
+        }
+
+        public void unitest_cancelAbsence()
+        {
+            stuList[tmp].TimeAbence--;
+            int TimeAbsenceTmp2 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
+            this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp2 - 1;
+            absence.Enabled = true;
+            cancelabsence.Enabled = false;
+        }
+
+        public void unitest_Absence()
+        {
+            stuList[tmp].TimeAbence++;
+            int TimeAbsenceTmp1 = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
+            this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp1 + 1;
+            cancelabsence.Enabled = true;
+            absence.Enabled = false;
+        }
+
+        public int preAssert()
+        {
+            int i = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
+            return i;
         }
     }
 }
