@@ -42,41 +42,46 @@
             // lblUserNo
             // 
             this.lblUserNo.AutoSize = true;
-            this.lblUserNo.Location = new System.Drawing.Point(25, 119);
+            this.lblUserNo.Location = new System.Drawing.Point(33, 149);
+            this.lblUserNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserNo.Name = "lblUserNo";
-            this.lblUserNo.Size = new System.Drawing.Size(53, 12);
+            this.lblUserNo.Size = new System.Drawing.Size(67, 15);
             this.lblUserNo.TabIndex = 0;
             this.lblUserNo.Text = "用户名：";
             // 
             // lblpassword
             // 
             this.lblpassword.AutoSize = true;
-            this.lblpassword.Location = new System.Drawing.Point(25, 185);
+            this.lblpassword.Location = new System.Drawing.Point(33, 231);
+            this.lblpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblpassword.Name = "lblpassword";
-            this.lblpassword.Size = new System.Drawing.Size(47, 12);
+            this.lblpassword.Size = new System.Drawing.Size(60, 15);
             this.lblpassword.TabIndex = 1;
             this.lblpassword.Text = "密 码：";
             // 
             // txtUserNo
             // 
-            this.txtUserNo.Location = new System.Drawing.Point(160, 110);
+            this.txtUserNo.Location = new System.Drawing.Point(213, 138);
+            this.txtUserNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(100, 21);
+            this.txtUserNo.Size = new System.Drawing.Size(132, 25);
             this.txtUserNo.TabIndex = 2;
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(160, 185);
+            this.txtpassword.Location = new System.Drawing.Point(213, 231);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
-            this.txtpassword.Size = new System.Drawing.Size(100, 21);
+            this.txtpassword.Size = new System.Drawing.Size(132, 25);
             this.txtpassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(27, 248);
+            this.btnLogin.Location = new System.Drawing.Point(36, 310);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(100, 29);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -84,9 +89,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(185, 248);
+            this.btnExit.Location = new System.Drawing.Point(247, 310);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(100, 29);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -98,17 +104,18 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(324, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(432, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 336);
+            this.ClientSize = new System.Drawing.Size(432, 420);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -116,6 +123,7 @@
             this.Controls.Add(this.txtUserNo);
             this.Controls.Add(this.lblpassword);
             this.Controls.Add(this.lblUserNo);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmLogin";
             this.Text = "登录界面";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
