@@ -32,11 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.butConfirm = new System.Windows.Forms.Button();
             this.dgvRandom = new System.Windows.Forms.DataGridView();
+            this.butResult1 = new System.Windows.Forms.Button();
             this.stuId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuCheck1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.stuCause1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.butResult1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRandom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,18 +69,29 @@
             // 
             // dgvRandom
             // 
+            this.dgvRandom.AllowUserToAddRows = false;
             this.dgvRandom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRandom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stuId,
             this.stuName,
             this.stuCheck1,
             this.stuCause1});
-            this.dgvRandom.Location = new System.Drawing.Point(408, 12);
+            this.dgvRandom.Location = new System.Drawing.Point(396, 12);
             this.dgvRandom.Name = "dgvRandom";
             this.dgvRandom.RowTemplate.Height = 23;
-            this.dgvRandom.Size = new System.Drawing.Size(380, 426);
+            this.dgvRandom.Size = new System.Drawing.Size(404, 426);
             this.dgvRandom.TabIndex = 4;
             this.dgvRandom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRandom_CellContentClick);
+            // 
+            // butResult1
+            // 
+            this.butResult1.Location = new System.Drawing.Point(196, 236);
+            this.butResult1.Name = "butResult1";
+            this.butResult1.Size = new System.Drawing.Size(75, 23);
+            this.butResult1.TabIndex = 5;
+            this.butResult1.Text = "点到结果";
+            this.butResult1.UseVisualStyleBackColor = true;
+            this.butResult1.Click += new System.EventHandler(this.butResult1_Click);
             // 
             // stuId
             // 
@@ -88,6 +99,7 @@
             this.stuId.HeaderText = "学号";
             this.stuId.Name = "stuId";
             this.stuId.ReadOnly = true;
+            this.stuId.Width = 75;
             // 
             // stuName
             // 
@@ -103,6 +115,7 @@
             this.stuCheck1.Name = "stuCheck1";
             this.stuCheck1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.stuCheck1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.stuCheck1.Width = 80;
             // 
             // stuCause1
             // 
@@ -110,16 +123,7 @@
             this.stuCause1.Name = "stuCause1";
             this.stuCause1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.stuCause1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // butResult1
-            // 
-            this.butResult1.Location = new System.Drawing.Point(196, 236);
-            this.butResult1.Name = "butResult1";
-            this.butResult1.Size = new System.Drawing.Size(75, 23);
-            this.butResult1.TabIndex = 5;
-            this.butResult1.Text = "点到结果";
-            this.butResult1.UseVisualStyleBackColor = true;
-            this.butResult1.Click += new System.EventHandler(this.butResult1_Click);
+            this.stuCause1.Width = 80;
             // 
             // testQuanity
             // 
@@ -134,6 +138,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "testQuanity";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "数量选择";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRandom)).EndInit();
             this.ResumeLayout(false);
@@ -147,10 +152,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butConfirm;
         private System.Windows.Forms.DataGridView dgvRandom;
+        private System.Windows.Forms.Button butResult1;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuId;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn stuCheck1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn stuCause1;
-        private System.Windows.Forms.Button butResult1;
     }
 }

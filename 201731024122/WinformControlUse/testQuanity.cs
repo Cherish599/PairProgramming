@@ -36,24 +36,38 @@ namespace WinformControlUse
         private void butConfirm_Click(object sender, EventArgs e)
         {
             //获取学生数据源
-            StudentDAO stuDao = new StudentDAO();
-            stuList = stuDao.getAllStudents();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("stuID", Type.GetType("System.String"));
-            dt.Columns.Add("stuName", Type.GetType("System.String"));
-            ArrayList alist = new ArrayList();
-            int t = int.Parse(textBox1.Text);
-            for (int i = 0; i < t; i++)//防止随机到同一位同学
-            {                
-                Random r = new Random(GetRandomSeed());
-                int m = r.Next(stuList.Count);
-                if (!alist.Contains(m))
-                    dt.Rows.Add(stuList[m].Id, stuList[m].Name);
-                else t++;
-                alist.Add(m);
-                
+            try
+            {
+                StudentDAO stuDao = new StudentDAO();
+                stuList = stuDao.getAllStudents();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("stuID", Type.GetType("System.String"));
+                dt.Columns.Add("stuName", Type.GetType("System.String"));
+                ArrayList alist = new ArrayList();
+                int t = int.Parse(textBox1.Text);
+                if (int.Parse(textBox1.Text) > stuList.Count || int.Parse(textBox1.Text) < 0)
+                {
+                    MessageBox.Show("输入有误！", "提示");
+                }
+                else
+                {
+                    for (int i = 0; i < t; i++)//防止随机到同一位同学
+                    {
+                        Random r = new Random(GetRandomSeed());
+                        int m = r.Next(stuList.Count);
+                        if (!alist.Contains(m))
+                            dt.Rows.Add(stuList[m].Id, stuList[m].Name);
+                        else t++;
+                        alist.Add(m);
+
+                    }
+                    dgvRandom.DataSource = dt;
+                }
             }
-            dgvRandom.DataSource = dt;
+            catch
+            {
+                MessageBox.Show("输入有误！", "提示");
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -66,26 +80,33 @@ namespace WinformControlUse
 
         }
 
-        private void butResult1_Click(object sender, EventArgs e)
+        public void butResult1_Click(object sender, EventArgs e)
         {
             int m = 0;
             int n = 0;
             StudentDAO stuDao = new StudentDAO();
             stuList = stuDao.getAllStudents();
             //统计学生缺席情况
-            for (int i = 0; i < dgvRandom.Rows.Count; i++)
+            try
             {
-                string _selectValue = dgvRandom.Rows[i].Cells["stuCheck1"].EditedFormattedValue.ToString();
-                if (_selectValue == "True")
-                    m++;
+                for (int i = 0; i < dgvRandom.Rows.Count; i++)
+                {
+                    string _selectValue = dgvRandom.Rows[i].Cells["stuCheck1"].EditedFormattedValue.ToString();
+                    if (_selectValue == "True")
+                        m++;
+                }
+                for (int i = 0; i < dgvRandom.Rows.Count; i++)
+                {
+                    string _selectValue = dgvRandom.Rows[i].Cells["stuCause1"].EditedFormattedValue.ToString();
+                    if (_selectValue == "True")
+                        n++;
+                }
+                MessageBox.Show("本次随机点到学生：" + int.Parse(textBox1.Text) + "人，缺席：" + m + "人，请假人数：" + n + "人");
             }
-            for (int i = 0; i < dgvRandom.Rows.Count; i++)
+            catch
             {
-                string _selectValue = dgvRandom.Rows[i].Cells["stuCause1"].EditedFormattedValue.ToString();
-                if (_selectValue == "True")
-                    n++;
+                MessageBox.Show("输入有误！", "提示");
             }
-            MessageBox.Show("本次随机点到学生：" + int.Parse(textBox1.Text) + "人，缺席：" + m + "人，请假人数：" + n + "人");
 
         }
     }

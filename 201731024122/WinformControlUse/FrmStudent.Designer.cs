@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStuList = new System.Windows.Forms.DataGridView();
+            this.stuID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.stuCause = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlProgress = new System.Windows.Forms.Panel();
@@ -39,15 +43,15 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.timerCallName = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.butSave = new System.Windows.Forms.Button();
+            this.butResult = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.stuNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.butResult = new System.Windows.Forms.Button();
-            this.stuID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.stuCause = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStuList)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,9 +83,32 @@
             this.dgvStuList.Location = new System.Drawing.Point(0, 0);
             this.dgvStuList.Name = "dgvStuList";
             this.dgvStuList.RowTemplate.Height = 23;
-            this.dgvStuList.Size = new System.Drawing.Size(643, 227);
+            this.dgvStuList.Size = new System.Drawing.Size(648, 227);
             this.dgvStuList.TabIndex = 1;
             this.dgvStuList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStuList_CellContentClick);
+            // 
+            // stuID
+            // 
+            this.stuID.DataPropertyName = "stuID";
+            this.stuID.HeaderText = "学号";
+            this.stuID.Name = "stuID";
+            // 
+            // stuName
+            // 
+            this.stuName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stuName.DataPropertyName = "stuName";
+            this.stuName.HeaderText = "姓名";
+            this.stuName.Name = "stuName";
+            // 
+            // stuCheck
+            // 
+            this.stuCheck.HeaderText = "是否缺席";
+            this.stuCheck.Name = "stuCheck";
+            // 
+            // stuCause
+            // 
+            this.stuCause.HeaderText = "是否请假";
+            this.stuCause.Name = "stuCause";
             // 
             // panel1
             // 
@@ -90,7 +117,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 25);
+            this.panel1.Size = new System.Drawing.Size(648, 25);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -99,7 +126,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(643, 227);
+            this.panel2.Size = new System.Drawing.Size(648, 227);
             this.panel2.TabIndex = 3;
             // 
             // pnlProgress
@@ -109,7 +136,7 @@
             this.pnlProgress.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlProgress.Location = new System.Drawing.Point(0, 252);
             this.pnlProgress.Name = "pnlProgress";
-            this.pnlProgress.Size = new System.Drawing.Size(643, 30);
+            this.pnlProgress.Size = new System.Drawing.Size(648, 30);
             this.pnlProgress.TabIndex = 4;
             // 
             // progressName
@@ -117,7 +144,7 @@
             this.progressName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressName.Location = new System.Drawing.Point(0, 0);
             this.progressName.Name = "progressName";
-            this.progressName.Size = new System.Drawing.Size(643, 30);
+            this.progressName.Size = new System.Drawing.Size(648, 30);
             this.progressName.TabIndex = 1;
             this.progressName.Click += new System.EventHandler(this.progressName_Click);
             // 
@@ -149,26 +176,57 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Info;
+            this.panel3.Controls.Add(this.butSave);
             this.panel3.Controls.Add(this.butResult);
             this.panel3.Controls.Add(this.btnLoadStu);
             this.panel3.Controls.Add(this.btnStart);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 282);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(643, 30);
+            this.panel3.Size = new System.Drawing.Size(648, 30);
             this.panel3.TabIndex = 7;
+            // 
+            // butSave
+            // 
+            this.butSave.Location = new System.Drawing.Point(311, 3);
+            this.butSave.Name = "butSave";
+            this.butSave.Size = new System.Drawing.Size(75, 23);
+            this.butSave.TabIndex = 10;
+            this.butSave.Text = "保存结果";
+            this.butSave.UseVisualStyleBackColor = true;
+            this.butSave.Click += new System.EventHandler(this.butSave_Click);
+            // 
+            // butResult
+            // 
+            this.butResult.Location = new System.Drawing.Point(181, 3);
+            this.butResult.Name = "butResult";
+            this.butResult.Size = new System.Drawing.Size(75, 23);
+            this.butResult.TabIndex = 9;
+            this.butResult.Text = "点到结果";
+            this.butResult.UseVisualStyleBackColor = true;
+            this.butResult.Click += new System.EventHandler(this.butResult_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.stuNum);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.lblName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 312);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(643, 150);
+            this.panel4.Size = new System.Drawing.Size(648, 97);
             this.panel4.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(345, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // stuNum
             // 
@@ -199,44 +257,15 @@
             this.lblName.Size = new System.Drawing.Size(0, 78);
             this.lblName.TabIndex = 7;
             // 
-            // butResult
+            // timer1
             // 
-            this.butResult.Location = new System.Drawing.Point(234, 4);
-            this.butResult.Name = "butResult";
-            this.butResult.Size = new System.Drawing.Size(75, 23);
-            this.butResult.TabIndex = 9;
-            this.butResult.Text = "点到结果";
-            this.butResult.UseVisualStyleBackColor = true;
-            this.butResult.Click += new System.EventHandler(this.butResult_Click);
-            // 
-            // stuID
-            // 
-            this.stuID.DataPropertyName = "stuID";
-            this.stuID.HeaderText = "学号";
-            this.stuID.Name = "stuID";
-            // 
-            // stuName
-            // 
-            this.stuName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stuName.DataPropertyName = "stuName";
-            this.stuName.HeaderText = "姓名";
-            this.stuName.Name = "stuName";
-            // 
-            // stuCheck
-            // 
-            this.stuCheck.HeaderText = "是否缺席";
-            this.stuCheck.Name = "stuCheck";
-            // 
-            // stuCause
-            // 
-            this.stuCause.HeaderText = "是否请假";
-            this.stuCause.Name = "stuCause";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 462);
+            this.ClientSize = new System.Drawing.Size(648, 409);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlProgress);
@@ -282,5 +311,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stuName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn stuCheck;
         private System.Windows.Forms.DataGridViewCheckBoxColumn stuCause;
+        private System.Windows.Forms.Button butSave;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer1;
     }
 }
