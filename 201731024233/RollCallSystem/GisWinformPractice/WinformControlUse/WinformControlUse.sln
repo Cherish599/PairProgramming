@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformControlUse", "WinformControlUse\WinformControlUse.csproj", "{ABF032AD-A07D-4CD0-ACB0-61B5C7CF79A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaoLayer", "DaoLayer\DaoLayer.csproj", "{1D140515-0ED0-4999-851F-FC291A6F3EB2}"
@@ -8,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{0E823200-986C-403E-B45B-EAF7A73F1FBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{FCAE6DCF-B578-4BF8-8502-E62A2C4487FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{66AE2B77-F131-475A-A732-E626044085A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,8 +63,23 @@ Global
 		{FCAE6DCF-B578-4BF8-8502-E62A2C4487FC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FCAE6DCF-B578-4BF8-8502-E62A2C4487FC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FCAE6DCF-B578-4BF8-8502-E62A2C4487FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Debug|x86.Build.0 = Debug|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{66AE2B77-F131-475A-A732-E626044085A9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AB48781-C448-4F4B-8E0A-C3D9946E8DA0}
 	EndGlobalSection
 EndGlobal

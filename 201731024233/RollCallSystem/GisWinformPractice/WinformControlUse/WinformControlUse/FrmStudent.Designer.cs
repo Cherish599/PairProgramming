@@ -77,6 +77,7 @@
             this.dgvStuList.Location = new System.Drawing.Point(0, 0);
             this.dgvStuList.Name = "dgvStuList";
             this.dgvStuList.ReadOnly = true;
+            this.dgvStuList.RowHeadersWidth = 51;
             this.dgvStuList.RowTemplate.Height = 23;
             this.dgvStuList.Size = new System.Drawing.Size(796, 227);
             this.dgvStuList.TabIndex = 1;
@@ -85,14 +86,17 @@
             // 
             this.stuID.DataPropertyName = "stuID";
             this.stuID.HeaderText = "学号";
+            this.stuID.MinimumWidth = 6;
             this.stuID.Name = "stuID";
             this.stuID.ReadOnly = true;
+            this.stuID.Width = 125;
             // 
             // stuName
             // 
             this.stuName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.stuName.DataPropertyName = "stuName";
             this.stuName.HeaderText = "姓名";
+            this.stuName.MinimumWidth = 6;
             this.stuName.Name = "stuName";
             this.stuName.ReadOnly = true;
             // 
@@ -106,16 +110,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(796, 25);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // studentsNum
             // 
             this.studentsNum.AutoSize = true;
-            this.studentsNum.Location = new System.Drawing.Point(94, 10);
+            this.studentsNum.Location = new System.Drawing.Point(91, 8);
             this.studentsNum.Name = "studentsNum";
             this.studentsNum.Size = new System.Drawing.Size(53, 12);
-            this.studentsNum.TabIndex = 1;
+            this.studentsNum.TabIndex = 2;
             this.studentsNum.Text = "学生人数";
-            this.studentsNum.Click += new System.EventHandler(this.label2_Click);
+            this.studentsNum.Click += new System.EventHandler(this.studentsNum_Click);
             // 
             // panel2
             // 
@@ -195,13 +200,13 @@
             // 
             // autoButton
             // 
-            this.autoButton.Location = new System.Drawing.Point(269, 4);
+            this.autoButton.Location = new System.Drawing.Point(227, 4);
             this.autoButton.Name = "autoButton";
             this.autoButton.Size = new System.Drawing.Size(75, 23);
-            this.autoButton.TabIndex = 5;
+            this.autoButton.TabIndex = 6;
             this.autoButton.Text = "自动点名";
             this.autoButton.UseVisualStyleBackColor = true;
-            this.autoButton.Click += new System.EventHandler(this.button2_Click);
+            this.autoButton.Click += new System.EventHandler(this.autoButton_Click);
             // 
             // sortBtn
             // 
@@ -279,8 +284,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label studentsNum;
         private System.Windows.Forms.Button sortBtn;
+        private System.Windows.Forms.Label studentsNum;
         private System.Windows.Forms.Button autoButton;
     }
 }

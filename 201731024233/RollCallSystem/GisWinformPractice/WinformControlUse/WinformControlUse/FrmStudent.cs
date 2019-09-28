@@ -38,8 +38,8 @@ namespace WinformControlUse
             btnStart.Visible = true;
             btnStop.Visible = true;
             btnLoadStu.Visible = false;
-            autoButton.Visible = true;
             sortBtn.Visible = true;
+            autoButton.Visible = true;
         }
 
         private void btnLoadStu_Click(object sender, EventArgs e)
@@ -70,8 +70,7 @@ namespace WinformControlUse
 
             setControlVisible();
 
-            //显式学生人数
-            this.studentsNum.Text = "学生人数：" + stuDao.getStudentRecordsNums();
+            this.studentsNum.Text = stuDao.getStudentRecordsNums().ToString();
 
         }
 
@@ -101,10 +100,6 @@ namespace WinformControlUse
         private void label1_Click(object sender, EventArgs e)
         {
             
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -173,9 +168,16 @@ namespace WinformControlUse
 
             setControlVisible();
 
+            //显式学生人数
+            this.studentsNum.Text = "学生人数：" + stuDao.getStudentRecordsNums();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void studentsNum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void autoButton_Click(object sender, EventArgs e)
         {
             timerCallName.Start();
             Thread thread3 = new Thread(() => {
@@ -186,6 +188,11 @@ namespace WinformControlUse
                 timerCallName.Stop();
             });
             thread3.Start();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
