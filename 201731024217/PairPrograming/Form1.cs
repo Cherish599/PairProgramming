@@ -40,7 +40,8 @@ namespace PairPrograming
             }
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[2].Width = 120;
-        }
+        }//Load the data of the students while loading the windows form.
+         //Initialize the progressbar and make it work properly.
 
         private void Rdchose_Click(object sender, EventArgs e)
         {
@@ -50,7 +51,7 @@ namespace PairPrograming
             Thread.Sleep(1);
             chosedStuInfo.Text = "学号:" + stuList[tmp].Id +" "+"姓名:"+stuList[tmp].Name;
             absence.Enabled = true;
-        }
+        }//perform a random roll call.
 
         private void absence_Click(object sender, EventArgs e)
         {
@@ -59,7 +60,7 @@ namespace PairPrograming
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp1 + 1;
             cancelAbsence.Enabled = true;
             absence.Enabled = false;
-        }
+        }//Record an absence for this chosed student.
 
         private void cancelabsence_Click(object sender, EventArgs e)
         {
@@ -68,7 +69,9 @@ namespace PairPrograming
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp2 - 1;
             absence.Enabled = true;
             cancelAbsence.Enabled = false;
-        }
+        }//Cancel the absence record for this chosed student if he was recorded an absence just now.
+
+        //The following five methods are used to do unit test.
 
         public void unitest_formLoad()
         {
@@ -88,7 +91,7 @@ namespace PairPrograming
             }
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[2].Width = 120;
-        }
+        }//Load the form whole doing the unit test.
 
         public void unitest_rdChoseStu()
         {
@@ -98,7 +101,7 @@ namespace PairPrograming
             Thread.Sleep(1);
             chosedStuInfo.Text = "学号:" + stuList[tmp].Id + " " + "姓名:" + stuList[tmp].Name;
             absence.Enabled = true;
-        }
+        }//Randomly roll call a student while doing the unit test.
 
         public void unitest_cancelAbsence()
         {
@@ -107,7 +110,7 @@ namespace PairPrograming
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp2 - 1;
             absence.Enabled = true;
             cancelAbsence.Enabled = false;
-        }
+        }//Cancel recording the absence of the chosed student if he was recorded absence just now while doing the unit test.
 
         public void unitest_Absence()
         {
@@ -116,12 +119,12 @@ namespace PairPrograming
             this.dataGridView1.Rows[tmp].Cells[2].Value = TimeAbsenceTmp1 + 1;
             cancelAbsence.Enabled = true;
             absence.Enabled = false;
-        }
+        }//Record an absence for the chosed student while doing the unit test.
 
         public int preAssert()
         {
             int i = Convert.ToInt32(this.dataGridView1.Rows[tmp].Cells[2].Value);
             return i;
-        }
+        }//Help get the number of the chosed student in the list while doing the unit test.
     }
 }
