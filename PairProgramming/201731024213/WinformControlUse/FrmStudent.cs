@@ -58,13 +58,12 @@ namespace WinformControlUse
             {
                 dt.Rows.Add(stu.Id,stu.Name);
                 progressName.Value += 1;//一个学生，进度条加1；
-                Thread.Sleep(500);                
             }            
             
             dgvStuList.DataSource = dt;
 
             setControlVisible();
-
+            this.stunum.Text = "学生人数：" + stuDao.getStudentRecordsNums();
         }
 
         private void FrmStudent_Load(object sender, EventArgs e)
@@ -101,6 +100,16 @@ namespace WinformControlUse
         private void FrmStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stunum_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
