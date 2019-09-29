@@ -12,7 +12,7 @@ namespace 结对编程
     {
         public static int ExecuteSQL(string sql)
         {
-            string str = "server=DESKTOP-63R5DGR\\SQLEXPRESS;database=Demo;Trusted_Connection=true";
+            string str = "server=LAPTOP-K6RLAPNC;database=Demo;Trusted_Connection=true";
             SqlConnection conn = new SqlConnection(str);
             conn.Open();
 
@@ -24,7 +24,7 @@ namespace 结对编程
         public static DataSet querysql(string sql)
         {
 
-            SqlConnection conn = new SqlConnection("server=DESKTOP-63R5DGR\\SQLEXPRESS;database=Demo;Trusted_Connection=true");
+            SqlConnection conn = new SqlConnection("server=LAPTOP-K6RLAPNC;database=Demo;Trusted_Connection=true");
             conn.Open();
             SqlDataAdapter Adapter = new SqlDataAdapter(sql, conn);
             DataSet ds = new DataSet();

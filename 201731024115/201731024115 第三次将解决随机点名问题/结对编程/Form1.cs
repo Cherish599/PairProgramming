@@ -27,7 +27,7 @@ namespace 结对编程
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = string.Format("select * from tblStu where stuNo='{0}' or stuName ='{1}'", textsno.Text, textsname.Text);
+            string sql = string.Format("select * from tblStu");
             DataSet ds = connect .querysql(sql);
             dataGridView1.DataSource = ds.Tables[0];
         }

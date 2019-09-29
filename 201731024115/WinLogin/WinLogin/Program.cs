@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 结对编程
+namespace WinLogin
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace 结对编程
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new WinLogin());
         }
     }
 }
