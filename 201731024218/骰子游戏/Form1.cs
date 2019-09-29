@@ -40,6 +40,7 @@ namespace 骰子游戏
         {
             axWindowsMediaPlayer1.URL =@"音乐\卢冠廷 - 賭神.mp3";
             timer1.Enabled = true;
+            label2.Text = null;
         }
 
 
@@ -91,12 +92,14 @@ namespace 骰子游戏
                 axWindowsMediaPlayer1.URL = @"音乐\Ozo - Epic Sax Guy.mp3";
                 Bitmap bm = new Bitmap(@"图片\win.gif");
                 pictureBox2.Image = bm;
+                label2.Text = "你赢了！";
             }
             else
             {
                 axWindowsMediaPlayer1.URL = @"音乐\阿炳 - 二泉映月.mp3";
                 Bitmap bm = new Bitmap(@"图片\lose.gif");
                 pictureBox2.Image = bm;
+                label2.Text = "你输了！";
             }
         }
     }
