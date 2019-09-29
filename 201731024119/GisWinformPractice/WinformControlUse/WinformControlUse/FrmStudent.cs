@@ -107,7 +107,13 @@ namespace WinformControlUse
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = lblName.Text;
+            int i = 0;
+            string tmp;
+            List<CheckBox> cb = new List<CheckBox>();
+            cb.Add(new CheckBox());
+            cb[i].Text = lblName.Text;
+            flowLayoutPanel1.Controls.Add(cb[i]);
+            i++;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
