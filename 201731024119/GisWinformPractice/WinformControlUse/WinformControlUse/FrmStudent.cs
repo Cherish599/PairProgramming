@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 using DaoLayer;
 using Entity;
@@ -72,7 +73,7 @@ namespace WinformControlUse
             iniControl();
         }
 
-        private void timerCallName_Tick(object sender, EventArgs e)
+        private   void timerCallName_Tick(object sender, EventArgs e)
         {
             Random ra = new Random();
             int i = ra.Next(stuList.Count);
@@ -102,6 +103,16 @@ namespace WinformControlUse
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = lblName.Text;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+       
         }
     }
 }
