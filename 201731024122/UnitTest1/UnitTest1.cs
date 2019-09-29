@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections;
 using DataBase;
 
+
 namespace UnitTestProject1
 {
     [TestClass]
@@ -23,7 +24,7 @@ namespace UnitTestProject1
             {
                 int p = 30;//随机点到30人，全班一共39人
                 Test1 = new List<Student>();
-                studentDAO stuDao = new studentDAO();
+                StudentDAO stuDao = new StudentDAO();
                 stuList = stuDao.getAllStudents();
                 if (p > stuList.Count || p < 0)
                 {
