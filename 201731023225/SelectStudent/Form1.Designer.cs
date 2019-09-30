@@ -31,14 +31,15 @@
             this.Read = new System.Windows.Forms.Button();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.Select = new System.Windows.Forms.Button();
-            this.Name = new System.Windows.Forms.Label();
+            this.Student = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Read
             // 
-            this.Read.Location = new System.Drawing.Point(289, 167);
+            this.Read.Location = new System.Drawing.Point(385, 209);
+            this.Read.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Read.Name = "Read";
-            this.Read.Size = new System.Drawing.Size(92, 23);
+            this.Read.Size = new System.Drawing.Size(123, 29);
             this.Read.TabIndex = 0;
             this.Read.Text = "读取学生文件";
             this.Read.UseVisualStyleBackColor = true;
@@ -46,40 +47,44 @@
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(12, 169);
+            this.TxtName.Location = new System.Drawing.Point(16, 211);
+            this.TxtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(271, 21);
+            this.TxtName.Size = new System.Drawing.Size(360, 25);
             this.TxtName.TabIndex = 1;
             // 
             // Select
             // 
-            this.Select.Location = new System.Drawing.Point(289, 140);
+            this.Select.Location = new System.Drawing.Point(385, 175);
+            this.Select.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Select.Name = "Select";
-            this.Select.Size = new System.Drawing.Size(91, 23);
+            this.Select.Size = new System.Drawing.Size(121, 29);
             this.Select.TabIndex = 0;
             this.Select.Text = "随机点名";
             this.Select.UseVisualStyleBackColor = true;
             this.Select.Click += new System.EventHandler(this.Select_Click);
             // 
-            // Name
+            // Student
             // 
-            this.Name.AutoSize = true;
-            this.Name.Font = new System.Drawing.Font("宋体", 80F);
-            this.Name.Location = new System.Drawing.Point(12, 9);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(369, 107);
-            this.Name.TabIndex = 2;
-            this.Name.Text = "label1";
+            this.Student.AutoSize = true;
+            this.Student.Font = new System.Drawing.Font("宋体", 80F);
+            this.Student.Location = new System.Drawing.Point(16, 11);
+            this.Student.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Student.Name = "Student";
+            this.Student.Size = new System.Drawing.Size(325, 134);
+            this.Student.TabIndex = 2;
+            this.Student.Text = "姓名";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 208);
-            this.Controls.Add(this.Name);
+            this.ClientSize = new System.Drawing.Size(523, 260);
+            this.Controls.Add(this.Student);
             this.Controls.Add(this.Select);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.Read);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "随机点名软件";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -93,7 +98,7 @@
         private System.Windows.Forms.Button Read;
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.Button Select;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label Student;
     }
 }
 
