@@ -11,6 +11,12 @@ namespace UnitTestProject1
         public void TestMethod1()
         {
             FrmStudent frm = new FrmStudent();
+            object sender = null;
+            EventArgs e = null;
+            frm.btnshow_Click(sender,e);
+            frm.btnopenfile_Click(null,null);
+          
+
         }
     }
 }

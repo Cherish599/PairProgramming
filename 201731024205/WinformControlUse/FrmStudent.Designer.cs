@@ -251,11 +251,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvdata;
+        public System.Windows.Forms.DataGridView dgvdata;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlProgress;
-        private System.Windows.Forms.Button btnopenfile;
+        public System.Windows.Forms.Button btnopenfile;
         private System.Windows.Forms.ProgressBar progressName;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;

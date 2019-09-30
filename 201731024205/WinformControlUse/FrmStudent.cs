@@ -13,7 +13,7 @@ namespace WinformControlUse
 {
     public partial class FrmStudent : Form
     {
-       
+
 
         public FrmStudent()
         {
@@ -31,18 +31,18 @@ namespace WinformControlUse
             btnStart.Visible = false;
             btnStop.Visible = false;
             btnopenfile.Enabled = true;
-            btnshow.Enabled = true;         
+            btnshow.Enabled = true;
         }
         //隐藏加载按钮
         void setControlVisible()
         {
             btnStart.Visible = true;
             btnStop.Visible = true;
-               
+
         }
 
-   
-        private void btnopenfile_Click(object sender, EventArgs e)
+
+        public void btnopenfile_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,9 +94,9 @@ namespace WinformControlUse
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
-        private void btnshow_Click(object sender, EventArgs e)
+        public void btnshow_Click(object sender, EventArgs e)
         {
             #region 读取相应的表名的Excel文件中数据到当前DataGridview中显示
             OleDbConnection ole = null;
@@ -129,9 +129,7 @@ namespace WinformControlUse
                 }
                 //DataGridView删除行
                 dgvdata.Rows.Remove(dgvdata.Rows[0]);//删除第一行
-                //dgvdata.Rows.Remove(dgvdata.CurrentRow);//删除当前光标所在行
-                //dgvdata.Rows.Remove(dgvdata.Rows[dgvdata.Rows.Count - 1]);//删除最后一行
-                //dgvdata.Rows.Clear();//删除所有行
+
                 ole.Close();
             }
             catch (Exception ex)
@@ -155,15 +153,16 @@ namespace WinformControlUse
             iniControl();
         }
 
-        private void timerCallName_Tick(object sender, EventArgs e)
+        public void timerCallName_Tick(object sender, EventArgs e)
         {
-            
-            Object obj= lblName.Text;
+
+            Object obj = lblName.Text;
             String str = (String)obj;
             Random ra = new Random();
             int i = ra.Next(dgvdata.Rows.Count);
             lblName.Text = (String)dgvdata.Rows[i].Cells[1].Value;
-            
+
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -176,8 +175,5 @@ namespace WinformControlUse
             timerCallName.Stop();
         }
 
-       
-
-        
     }
 }
