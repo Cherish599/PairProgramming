@@ -77,6 +77,7 @@ namespace WinformControlUse
             Random ra = new Random();
             int i = ra.Next(stuList.Count);
             lblName.Text = stuList[i].Name;
+            label3.Text = stuList[i].Id;
 
         }
 
