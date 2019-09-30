@@ -44,9 +44,15 @@ namespace SelectStudent
 
         private void Select_Click(object sender, EventArgs e)
         {
-            Random RD= new Random();
+            Random RD = new Random();
+            for (int i = 1; i <= 20; i++)
+            {
+                Student.Text = StudentName[RD.Next(0, StudentName.Length - 1)];
+                Application.DoEvents();
+                Thread.Sleep(150);
+            }
 
-            Name.Text=
-        }
+            Student.Text = StudentName[RD.Next(0, StudentName.Length - 1)];
+        }//姓名滚动3秒后，显示随机选中的姓名
     }
 }
