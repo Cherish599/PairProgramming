@@ -15,6 +15,12 @@ namespace UnitTestProject1
             StudentDataset SD = new StudentDataset();
             StudentDAO SDao = new StudentDAO();
             Student St = new Student();
+            int i;
+            StudentDAO std = new StudentDAO();
+            i = std.getStudentRecordsNums();
+            Assert.AreEqual(i, 84);
+            std.getAllStudents();
+            Student sta = new Student("006", "马芸慧");
         }
     }
 }

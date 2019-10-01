@@ -33,4 +33,32 @@ namespace Entity
             this.name = name;
         }
     }
+    public class Students
+    {
+        private String id;
+
+        public String Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private String name;
+
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public Students()
+        {
+
+        }
+        public Students(String id, String name)
+        {
+            this.id = id;
+            this.name = name;
+        }
+    }
 }
